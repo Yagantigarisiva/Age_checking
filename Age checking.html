@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<title>Age checking program </title>
+<script>
+function check() {
+var firstElement = document.getElementById("enter_age");
+var age = firstElement.value;
+
+// Parse the input as an integer
+var firstInteger = parseInt(age, 10);
+
+// Check if the input is a valid number
+if (isNaN(firstInteger)) {
+                alert("Please enter a valid number.");
+                return;
+}
+
+// Check age eligibility
+if (firstInteger >= 18) {
+alert("Yes, you are eligible to vote, reach out to Sagar and get the application for vote and apply .");
+} else {
+alert("Sorry, you are not eligible to vote, check the same procedure in next year, reach out to the Srinivas further procedure.");
+}
+}
+</script>
+</head>
+<body>
+<h1>Welcome to the Age Checking Program</h1>
+<p>Enter your age:</p>
+<input type="text" id="enter_age" name="enterAge" title="Please enter your age">
+<br>
+<input type="button" id="check" name="checkButton" value="Check" onclick="check()">
+</body>
+</html>
