@@ -28,6 +28,11 @@
                 alert("Sorry, " + name + ", you are not eligible to vote because you are out of the eligible age range.");
             }
         }
+
+            function closePage() {
+            // Redirect to index.html
+            window.location.href = "index.html";
+        }
     </script>
 </head>
 <body>
@@ -39,5 +44,7 @@
     <input type="text" id="enter_age" name="enterAge" title="Please enter your age">
     <br>
     <input type="button" id="check" name="checkButton" value="Check" onclick="check()">
+    <br><br>
+    <input type="button" id="close" name="closeButton" value="Close Page" onclick="closePage()">
 </body>
 </html>
