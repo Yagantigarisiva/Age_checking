@@ -1,48 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indian Voters</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Age Checking Program</title>
+    <script>
+        function check() {
+            const name = document.getElementById("Enter_your_name").value;
+            var firstElement = document.getElementById("enter_age");
+            var age = firstElement.value;
+
+            // Parse the input as an integer
+            var firstInteger = parseInt(age, 10);
+
+            // Check if the input is a valid number
+            if (isNaN(firstInteger)) {
+                alert("Please enter a valid number.");
+                return;
+            }
+
+            // Check age eligibility based on different criteria
+            if (firstInteger < 18) {
+                alert("Sorry, " + name + ", you are not eligible to vote.");
+            } else if (firstInteger >= 18 && firstInteger <= 35) {
+                alert("You are eligible to vote, " + name + "!");
+            } else {
+                alert("Sorry, " + name + ", you are not eligible to vote because you are out of the eligible age range.");
+            }
+        }
+    </script>
 </head>
 <body>
-    <div id="skipnav"><a href="#mainContent">Skip to main content</a></div>
-    <nav role="navigation">
-        <ul>
-            <li><a href="About us.html" target="_blank">About Us</a></li>
-            <li><a href="Contact us.html" target="_blank">Contact Us</a></li>
-            <li><a href="Age checking.html" target="_blank">Checking Vote Eligibility</a></li>
-        </ul>
-    </nav>
-    <header role="banner" class="banner">
-        <img src="indian.jpeg" alt="Vote Weapon Logo" width="100" height="100">
-        <p></p>
-    </header>
-    <div>
-        <form>
-            <input type="text" name="search" placeholder="Search...">
-            <input type="submit" value="Search">
-        </form>
-    </div>
-    <main role="main" id="mainContent" tabindex="-1">
-        <h1>Voting</h1>
-        <p>Vote is the best weapon for everyone. All citizens who are 18 years old and above are eligible to cast their vote and choose their leaders. By exercising their right to vote, people can select the correct leader to rule the country for the benefit of all. Voting is a powerful tool that allows citizens to participate in the democratic process and shape their future.</p>
-        <h2>Vote Weapon</h2>
-        <p>"Best weapon vote in hand" is a metaphorical expression that refers to the power of voting as a means of influencing change and exercising one's rights as a citizen. In this sense, the "best weapon" is not a physical object, but rather the ability to participate in the democratic process.</p>
-        <h3>Minors</h3>
-        <p>Typically refers to individuals under the age of 18. In many countries, minors are considered children or adolescents and are subject to specific laws and regulations protecting their rights and well-being.</p>
-        <h3>Majors</h3>
-        <p>Typically refers to individuals who are 18 years old or older. In many countries, majors are considered adults and are granted certain rights and responsibilities, such as the right to vote, own property, and enter into contracts.</p>
-        <h2>Checking Vote Eligibility</h2>
-        <p>If you are unsure about your eligibility to vote, please click on the link below to check if you are old enough to vote.</p>
-        <a href="Age checking.html" target="_blank">Age Checking</a>
-    </main>
-    <footer role="contentinfo">
-        <a href="https://chat.whatsapp.com/HZLr73qCQiA0999Ky3OMVe">WhatsApp</a>
-        <a href="#">Facebook</a>
-        <a href="#">LinkedIn</a>
-        <a href="https://youtu.be/WJgc-goUhS0?si=tAwl7lukyYVR6UdE">YouTube</a>
-    </footer>
+    <h1>Welcome to the Age Checking Program</h1>
+    <p>Enter your name:</p>
+    <input type="text" id="Enter_your_name" name="EnterYourName" title="Enter your name">
+    <br>
+    <p>Enter your age:</p>
+    <input type="text" id="enter_age" name="enterAge" title="Please enter your age">
+    <br>
+    <input type="button" id="check" name="checkButton" value="Check" onclick="check()">
 </body>
 </html>
